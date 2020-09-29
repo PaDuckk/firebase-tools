@@ -65,7 +65,7 @@ const loop = async (options) => {
   let count = 1;
 
   while (true) {
-    options.output = `database_profile_log_${moment().format("YYYY_MM_DD_HH_mm_ss")}.txt`;
+    options.output = `logs/database_profile_log_${moment().format("YYYY_MM_DD_HH_mm_ss")}.txt`;
 
     await profiler(options);
     // await delay(1000 * 60);

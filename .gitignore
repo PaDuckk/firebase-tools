@@ -17,3 +17,4 @@ scripts/*.json
 lib/
 dev/
 /database_profile_log_*.txt
+logs/database_profile_log_*.txt
