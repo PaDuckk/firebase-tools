@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node ./lib/bin/firebase.js database:profile --raw -o test.txt -d 60",
+    "login": "node ./lib/bin/firebase.js login",
     "build": "tsc",
     "build:watch": "tsc --watch",
     "clean": "rimraf lib",
