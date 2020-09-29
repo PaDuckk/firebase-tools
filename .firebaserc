@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "prod": "colavo-ae9bd",
+    "dev": "colavolab",
+    "prod-observer": "colavo-observer",
+    "dev-observer": "colavolab-observer",
+    "default": "colavo-test"
+  }
+}

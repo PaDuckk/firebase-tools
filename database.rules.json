@@ -1,0 +1,47 @@
+{
+  "rules":{
+  	".read": "auth != null",
+    ".write": "auth != null",
+    "users": {
+      "$uid": {       
+      	".read": "auth != null && auth.uid == $uid" 
+      }
+    },
+    "users_temp": {
+      "$uid": {       
+      	".read": "auth != null && auth.uid == $uid" 
+      }
+    },
+    "user_employee_memberships": {
+      "$uid": {       
+      	".read": "auth != null && auth.uid == $uid" 
+      }
+    },
+    /*
+    "salons": {
+      "$salon_key": {
+        ".read": "root.child('user_employee_memberships/'+auth.uid).exists() &&
+          data.child('owner_uid').val() == auth.uid"
+      }      
+    },
+    */
+      
+    /**
+     * required on book.colavo.kr
+     * - employee_settings
+     * - salons
+     * - salon_employees
+     * - salon_customers
+     * - salon_services
+     * - customer_events
+     * - customer_daily_cancel_count
+     * - insta_customers
+     */
+      
+    "salon_customers": {
+      "$salon_key" : {
+      	".indexOn" : ["phone"]  
+      }
+    }
+  }
+}

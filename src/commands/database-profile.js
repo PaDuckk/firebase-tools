@@ -10,6 +10,8 @@ var utils = require("../utils");
 var profiler = require("../profiler");
 var { Emulators } = require("../emulator/types");
 var { warnEmulatorNotSupported } = require("../emulator/commandUtils");
+const delay = require("delay");
+const moment = require("moment");
 
 var description = "profile the Realtime Database and generate a usage report";
 
@@ -53,5 +55,21 @@ module.exports = new Command("database:profile")
       });
     }
 
-    return profiler(options);
+    console.log(options.output);
+    console.log(options.duration);
+
+    return loop(options);
   });
+
+const loop = async (options) => {
+  let count = 1;
+
+  while (true) {
+    options.output = `database_profile_log_${moment().format("YYYY_MM_DD_HH_mm_ss")}.txt`;
+
+    await profiler(options);
+    // await delay(1000 * 60);
+    console.log(count);
+    count++;
+  }
+};

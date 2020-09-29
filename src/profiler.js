@@ -38,7 +38,7 @@ module.exports = function(options) {
       var outStream = fileOut ? fs.createWriteStream(options.output) : process.stdout;
       var counter = 0;
       var spinner = ora({
-        text: "0 operations recorded. Press [enter] to stop",
+        text: "0 operations recorded. Press [enter] to stop1",
         color: "yellow",
       });
       var outputFormat = options.raw ? "RAW" : options.parent.json ? "JSON" : "TXT"; // eslint-disable-line no-nested-ternary
